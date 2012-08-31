@@ -1,6 +1,5 @@
 class Line < ActiveRecord::Base
 	belongs_to :scene
-	belongs_to :script, through: :scene
 	belongs_to :character
 
   attr_accessible :character_id, :cue, :line, :order, :scene_id
