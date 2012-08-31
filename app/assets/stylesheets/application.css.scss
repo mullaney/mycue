@@ -11,3 +11,17 @@
  *= require_self
  *= require_tree .
  */
+
+ @import "bootstrap";
+
+.table {
+	a {
+	  color: #fff;
+	  &:visited {
+	    color: #fff;
+	  }
+	  &:hover {
+	    color: #ddd;
+	  }
+	}
+}

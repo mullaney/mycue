@@ -1,6 +1,6 @@
 <h1>Listing scripts</h1>
 
-<table>
+<table class="table table-striped">
   <tr>
     <th>Title</th>
     <th></th>
@@ -11,9 +11,9 @@
 <% @scripts.each do |script| %>
   <tr>
     <td><%= script.title %></td>
-    <td><%= link_to 'Show', script %></td>
-    <td><%= link_to 'Edit', edit_script_path(script) %></td>
-    <td><%= link_to 'Destroy', script, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= link_to 'Show', script, :class => "btn .btn-mini btn-primary" %></td>
+    <td><%= link_to 'Edit', edit_script_path(script), :class => "btn .btn-mini btn-success" %></td>
+    <td><%= link_to 'Destroy', script, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn .btn-mini btn-danger" %></td>
   </tr>
 <% end %>
 </table>

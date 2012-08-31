@@ -1,6 +1,6 @@
 <h1>Listing lines</h1>
 
-<table>
+<table class="table table-striped">
   <tr>
     <th>Scene</th>
     <th>Character</th>
@@ -19,9 +19,9 @@
     <td><%= line.cue %></td>
     <td><%= line.line %></td>
     <td><%= line.order %></td>
-    <td><%= link_to 'Show', line %></td>
-    <td><%= link_to 'Edit', edit_line_path(line) %></td>
-    <td><%= link_to 'Destroy', line, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= link_to 'Show', line, :class => "btn .btn-mini btn-primary" %></td>
+    <td><%= link_to 'Edit', edit_line_path(line), :class => "btn .btn-mini btn-success" %></td>
+    <td><%= link_to 'Destroy', line, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn .btn-mini btn-danger" %></td>
   </tr>
 <% end %>
 </table>
