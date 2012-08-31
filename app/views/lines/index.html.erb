@@ -1,0 +1,31 @@
+<h1>Listing lines</h1>
+
+<table>
+  <tr>
+    <th>Scene</th>
+    <th>Character</th>
+    <th>Cue</th>
+    <th>Line</th>
+    <th>Order</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @lines.each do |line| %>
+  <tr>
+    <td><%= line.scene_id %></td>
+    <td><%= line.character_id %></td>
+    <td><%= line.cue %></td>
+    <td><%= line.line %></td>
+    <td><%= line.order %></td>
+    <td><%= link_to 'Show', line %></td>
+    <td><%= link_to 'Edit', edit_line_path(line) %></td>
+    <td><%= link_to 'Destroy', line, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Line', new_line_path %>

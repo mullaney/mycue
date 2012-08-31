@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+scene1:
+	id: 1
+  name: Act 1, Scene 2
+  script_id: 1
+  order: 1
+
+scene2:
+	id: 2
+  name: Act 2, Scene 4
+  script_id: 1
+  order: 2

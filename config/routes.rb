@@ -1,4 +1,14 @@
 Mycue::Application.routes.draw do
+  resources :characters
+
+  resources :lines
+
+  resources :scenes
+
+  resources :scripts
+
+  root to: 'scripts#index'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

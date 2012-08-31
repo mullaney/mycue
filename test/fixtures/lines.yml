@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+line1:
+  id: 1
+  scene_id: 1
+  character_id: 1
+  cue: Hello.
+  line: Hello, stranger. You are looking nice.
+  order: 1
+
+line2:
+  id: 2
+  scene_id: 1
+  character_id: 1
+  cue: Back off.
+  line: Have it your way.
+  order: 2

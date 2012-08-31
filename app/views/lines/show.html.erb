@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Scene:</b>
+  <%= @line.scene_id %>
+</p>
+
+<p>
+  <b>Character:</b>
+  <%= @line.character_id %>
+</p>
+
+<p>
+  <b>Cue:</b>
+  <%= @line.cue %>
+</p>
+
+<p>
+  <b>Line:</b>
+  <%= @line.line %>
+</p>
+
+<p>
+  <b>Order:</b>
+  <%= @line.order %>
+</p>
+
+
+<%= link_to 'Edit', edit_line_path(@line) %> |
+<%= link_to 'Back', lines_path %>
