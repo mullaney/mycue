@@ -3,7 +3,6 @@
 MyCue is an actor's aid for learning lines.
 
 ## To Do
-* Populate dev database with faker data
 * Add new script without leaving index (using jQuery/Ajax)
 * Add new scene on show script
 * Add new character on show script
