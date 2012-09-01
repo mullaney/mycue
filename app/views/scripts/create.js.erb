@@ -2,5 +2,5 @@
 	$('input#script_title').effect('highlight', { color: 'red' });
 <% else %>
 	$('div#scripts').append("<%= escape_javascript(render @script) %>");
-	$('div#<%= dom_id(@script) %>').effect('highlight');
+	$('div#<%= dom_id(@script) %>').effect('highlight', {}, 1500);
 <% end %>

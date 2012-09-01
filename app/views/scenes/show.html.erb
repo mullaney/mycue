@@ -1,20 +1,29 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Name:</b>
-  <%= @scene.name %>
-</p>
+<h1><%= @scene.name %></h1>
+<p>from <strong><%= @script.name %></strong></p>
+<div id="lines" class="padding10">
+	<%= render @lines %>
+</div>
 
-<p>
-  <b>Script:</b>
-  <%= @scene.script_id %>
-</p>
-
-<p>
-  <b>Order:</b>
-  <%= @scene.order %>
-</p>
-
+<h4>New Line:</h4>
+<%= form_for(Line.new()) do |f| %>
+  <div class="field">
+    <%= f.label :cue %>
+    <%= f.text_field :cue %>
+  </div>
+  <div class="field">
+    <%= f.label :line %>
+    <%= f.text_field :line %>
+  </div>
+  <div class"hidden">
+  	<%= f.hidden_field :scene_id, :value => @scene.id %>
+  	<%= f.hidden_field :order, :value => 0 %>
+  </div>
+  <div class="action">
+    <%= f.submit %>
+  </div>
+<% end %>
 
 <%= link_to 'Edit', edit_scene_path(@scene) %> |
-<%= link_to 'Back', scenes_path %>
+<%= link_to 'Back to scenes', script_path(@scene.script_id) %>

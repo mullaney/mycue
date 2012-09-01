@@ -1,10 +1,24 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Title:</b>
-  <%= @script.title %>
-</p>
+<h1><%= @script.title %></h1>
+<div id="scenes" class="padding10">
+	<%= render @scenes %>
+</div>
+
+<h4>New Scene:</h4>
+<%= form_for(Scene.new(), remote: true) do |f| %>
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+  <div class"hidden">
+  	<%= f.hidden_field :script_id, :value => @script.id %>
+  	<%= f.hidden_field :order, :value => 0 %>
+  </div>
+  <div class="action">
+    <%= f.submit %>
+  </div>
+<% end %>
 
 
-<%= link_to 'Edit', edit_script_path(@script) %> |
-<%= link_to 'Back', scripts_path %>
+<%= link_to 'Back to scripts', scripts_path %>

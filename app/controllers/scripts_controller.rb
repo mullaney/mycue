@@ -14,6 +14,7 @@ class ScriptsController < ApplicationController
   # GET /scripts/1.json
   def show
     @script = Script.find(params[:id])
+    @scenes = Scene.where(script_id: @script.id)
 
     respond_to do |format|
       format.html # show.html.erb

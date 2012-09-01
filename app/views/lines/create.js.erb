@@ -1,0 +1,6 @@
+<% if @line.new_record? %>
+	$('input#line.cue').effect('highlight', { color: 'red' });
+<% else %>
+	$('div#lines').append("<%= escape_javascript(render @line) %>");
+	$('div#<%= dom_id(@line) %>').effect('highlight', {}, 1500);
+<% end %>

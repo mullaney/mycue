@@ -28,14 +28,18 @@ a {
   }
 }
 
-.btn a {
-  color: #fff;
-  &:visited {
-    color: #fff;
+.padding10 {
+  padding: 10px;
+  div {
+    padding: 5px;
   }
-  &:hover {
-    color: #ddd;
+  span {
+    padding: 10px;
   }
+}
+
+.col3 {
+  width:300px;
 }
 
 div {

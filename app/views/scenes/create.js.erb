@@ -1,0 +1,6 @@
+<% if @scene.new_record? %>
+	$('input#scene_name').effect('highlight', { color: 'red' });
+<% else %>
+	$('div#scenes').append("<%= escape_javascript(render @scene) %>");
+	$('div#<%= dom_id(@scene) %>').effect('highlight', {}, 1500);
+<% end %>
