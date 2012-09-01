@@ -1,23 +1,16 @@
-<h1>Listing scripts</h1>
+<h1>My Scripts</h1>
 
-<table class="table table-striped">
-  <tr>
-    <th>Title</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+<div id="scripts" class="row">
+  <%= render @scripts %>
+</div>
 
-<% @scripts.each do |script| %>
-  <tr>
-    <td><%= script.title %></td>
-    <td><%= link_to 'Show', script, :class => "btn .btn-mini btn-primary" %></td>
-    <td><%= link_to 'Edit', edit_script_path(script), :class => "btn .btn-mini btn-success" %></td>
-    <td><%= link_to 'Destroy', script, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn .btn-mini btn-danger" %></td>
-  </tr>
+<h4>New Script:</h4>
+<%= form_for(Script.new, remote: true) do |f| %>
+  <div class="field">
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </div>
+  <div class="action">
+    <%= f.submit %>
+  </div>
 <% end %>
-</table>
-
-<br />
-
-<%= link_to 'New Script', new_script_path %>

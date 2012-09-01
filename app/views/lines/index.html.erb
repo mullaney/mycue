@@ -13,7 +13,7 @@
   </tr>
 
 <% @lines.each do |line| %>
-  <tr>
+  <tr id="line_<%= line.id %>">
     <td><%= line.scene_id %></td>
     <td><%= line.character_id %></td>
     <td><%= line.cue %></td>

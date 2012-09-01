@@ -28,6 +28,16 @@ a {
   }
 }
 
+.btn a {
+  color: #fff;
+  &:visited {
+    color: #fff;
+  }
+  &:hover {
+    color: #ddd;
+  }
+}
+
 div {
   &.field, &.actions {
     margin-bottom: 10px;

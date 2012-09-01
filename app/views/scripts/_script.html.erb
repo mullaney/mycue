@@ -1,0 +1,7 @@
+<%= div_for script do %>
+	<div class="span3"><%= link_to "#{script.title}", script %></div>
+	<div class="span3">
+		<%= link_to 'Edit', edit_script_path(script), :class => "btn btn-success" %>
+	  <%= link_to 'Destroy', script, method: :delete, remote: true, data: { confirm: 'Are you sure?' }, :class => "btn btn-danger" %>
+	</div>
+<% end %>

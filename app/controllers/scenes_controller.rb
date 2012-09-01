@@ -50,6 +50,7 @@ class ScenesController < ApplicationController
         format.html { render action: "new" }
         format.json { render json: @scene.errors, status: :unprocessable_entity }
       end
+      format.js
     end
   end
 
@@ -78,6 +79,7 @@ class ScenesController < ApplicationController
     respond_to do |format|
       format.html { redirect_to scenes_url }
       format.json { head :no_content }
+      format.js
     end
   end
 end

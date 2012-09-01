@@ -50,6 +50,7 @@ class ScriptsController < ApplicationController
         format.html { render action: "new" }
         format.json { render json: @script.errors, status: :unprocessable_entity }
       end
+      format.js
     end
   end
 
@@ -78,6 +79,7 @@ class ScriptsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to scripts_url }
       format.json { head :no_content }
+      format.js
     end
   end
 end

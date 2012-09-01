@@ -11,7 +11,7 @@
   </tr>
 
 <% @scenes.each do |scene| %>
-  <tr>
+  <tr id="scene_<%= scene.id %>">
     <td><%= scene.name %></td>
     <td><%= scene.script_id %></td>
     <td><%= scene.order %></td>

@@ -10,7 +10,7 @@
   </tr>
 
 <% @characters.each do |character| %>
-  <tr>
+  <tr id="character_<%= character.id %>">
     <td><%= character.name %></td>
     <td><%= character.script_id %></td>
     <td><%= link_to 'Show', character, :class => "btn .btn-mini btn-primary" %></td>

@@ -10,6 +10,7 @@ MyCue is an actor's aid for learning lines.
 * Before save check if order of line (and scene) is null and change it to 0?
 * Quiz mode for particular scene
 * Quiz mode randomize the lines
+* require jquery_ui?
 
 ## Models
 

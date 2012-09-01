@@ -1,0 +1,6 @@
+<% if @script.new_record? %>
+	$('input#script_title').effect('highlight', { color: 'red' });
+<% else %>
+	$('div#scripts').append("<%= escape_javascript(render @script) %>");
+	$('div#<%= dom_id(@script) %>').effect('highlight');
+<% end %>

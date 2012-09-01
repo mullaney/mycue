@@ -50,6 +50,7 @@ class LinesController < ApplicationController
         format.html { render action: "new" }
         format.json { render json: @line.errors, status: :unprocessable_entity }
       end
+      format.js
     end
   end
 
@@ -78,6 +79,7 @@ class LinesController < ApplicationController
     respond_to do |format|
       format.html { redirect_to lines_url }
       format.json { head :no_content }
+      format.js
     end
   end
 end
