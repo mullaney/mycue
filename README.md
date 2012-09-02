@@ -18,7 +18,6 @@ MyCue is an actor's aid for learning lines.
 A script that the user is learning (a play, a film)
 * :title, :string
 * has_many :scenes
-* has_many :characters
 * has_many :lines, through: scene
 
 ### Scene
@@ -31,16 +30,9 @@ A script that the user is learning (a play, a film)
 ### Lines
 * belongs_to :scene
 * belongs_to :script, through: :scene
-* belongs_to :character
 * :scene_id, :integer
 * :character_id, :integer
 * :cue, :string
 * :line, :string
 * :first_letter - first letter only from line 
 * :order, :integer - number for the order of lines within a scene
-
-### Character
-* belongs_to :script
-* has_many :lines
-* :name, string
-* :script_id, :integer

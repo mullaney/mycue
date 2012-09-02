@@ -18,7 +18,7 @@ class LinesControllerTest < ActionController::TestCase
 
   test "should create line" do
     assert_difference('Line.count') do
-      post :create, line: { character_id: @line.character_id, cue: @line.cue, line: @line.line, order: @line.order, scene_id: @line.scene_id }
+      post :create, line: { cue: @line.cue, line: @line.line, order: @line.order, scene_id: @line.scene_id }
     end
 
     assert_redirected_to line_path(assigns(:line))
@@ -35,7 +35,7 @@ class LinesControllerTest < ActionController::TestCase
   end
 
   test "should update line" do
-    put :update, id: @line, line: { character_id: @line.character_id, cue: @line.cue, line: @line.line, order: @line.order, scene_id: @line.scene_id }
+    put :update, id: @line, line: { cue: @line.cue, line: @line.line, order: @line.order, scene_id: @line.scene_id }
     assert_redirected_to line_path(assigns(:line))
   end
 

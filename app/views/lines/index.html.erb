@@ -3,7 +3,6 @@
 <table class="table table-striped">
   <tr>
     <th>Scene</th>
-    <th>Character</th>
     <th>Cue</th>
     <th>Line</th>
     <th>Order</th>
@@ -15,7 +14,6 @@
 <% @lines.each do |line| %>
   <tr id="line_<%= line.id %>">
     <td><%= line.scene_id %></td>
-    <td><%= line.character_id %></td>
     <td><%= line.cue %></td>
     <td><%= line.line %></td>
     <td><%= line.order %></td>

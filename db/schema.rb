@@ -11,23 +11,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120831124528) do
-
-  create_table "characters", :force => true do |t|
-    t.string   "name",       :null => false
-    t.integer  "script_id",  :null => false
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
+ActiveRecord::Schema.define(:version => 20120901023943) do
 
   create_table "lines", :force => true do |t|
-    t.integer  "scene_id",     :null => false
-    t.integer  "character_id", :null => false
-    t.string   "cue",          :null => false
-    t.string   "line",         :null => false
-    t.integer  "order",        :null => false
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
+    t.integer  "scene_id",   :null => false
+    t.string   "cue",        :null => false
+    t.string   "line",       :null => false
+    t.integer  "order",      :null => false
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "scenes", :force => true do |t|

@@ -1,10 +1,8 @@
 class Line < ActiveRecord::Base
 	belongs_to :scene
-	belongs_to :character
 
-  attr_accessible :character_id, :cue, :line, :order, :scene_id
+  attr_accessible :cue, :line, :order, :scene_id
 
-  validates_presence_of :character_id
   validates_presence_of :cue
   validates_presence_of :line
   validates_presence_of :order

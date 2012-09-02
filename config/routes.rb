@@ -1,6 +1,4 @@
 Mycue::Application.routes.draw do
-  resources :characters
-
   resources :lines
 
   resources :scenes
