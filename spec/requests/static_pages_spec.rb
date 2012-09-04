@@ -35,7 +35,5 @@ describe "Static Pages" do
     page.should have_selector 'h1', text: 'myCue'
     click_link 'Sign up!'
     page.should have_selector 'title', text: full_title('Sign up')
-    click_link 'Home'
-    page.should have_selector 'h1', text: 'myCue'
   end
 end
