@@ -18,21 +18,6 @@ pre {
   font-size: 11px;
 }
 
-
-.padding10 {
-  padding: 10px;
-  div {
-    padding: 5px;
-  }
-  span {
-    padding: 10px;
-  }
-}
-
-.col3 {
-  width:300px;
-}
-
 div {
   &.field, &.actions {
     margin-bottom: 10px;

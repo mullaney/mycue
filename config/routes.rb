@@ -6,6 +6,8 @@ Mycue::Application.routes.draw do
 
   resources :scripts
 
+  resources :users
+
   root to: 'static_pages#home'
 
   match "/help" => "static_pages#help"
