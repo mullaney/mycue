@@ -24,6 +24,8 @@ describe "User Pages" do
     let(:submit) { "Create my account" }
 
     describe "with invalid information" do
+      it { should have_link('Login') }
+      it { should_not have_link('Logout') }
       it "should not create a user" do
         expect { click_button submit }.not_to change(User, :count)
       end
@@ -47,6 +49,7 @@ describe "User Pages" do
         it { should have_selector('title', text: "Profile") }
         it { should have_selector('div.alert.alert-success', text: 'Thanks for joining myCue!') }
         it { should have_link('Logout') }
+        it { should_not have_link('Login') }
       end
     end
   end

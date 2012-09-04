@@ -14,7 +14,7 @@ describe "Authentication" do
 	describe "login" do
 		before { visit login_path }
 
-		describe "with valid information" do
+		describe "with invalid information" do
 			before { click_button "Login" }
 
 			it { should have_selector('title', text: 'Login') }
