@@ -7,12 +7,15 @@ Mycue::Application.routes.draw do
   resources :scripts
 
   resources :users
+  resources :sessions, only: [:new, :create, :destroy]
 
   root to: 'static_pages#home'
 
-  match "/help" => "static_pages#help"
+  match '/help',   to: "static_pages#help"
 
-  match "/signup" => "users#new"
+  match '/signup', to: 'users#new'
+  match '/login',  to: 'sessions#new'
+  match '/logout', to: 'sessions#destroy', via: :delete
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
