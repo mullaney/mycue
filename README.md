@@ -2,9 +2,13 @@
 
 MyCue is an actor's aid for learning lines.
 
+This application is not finished. It has a working model for users and the other models and forms are all there in some fashion, but it is not currently ready for use in any sense of the word. However, I expect it will be useable in some fashion within a few weeks.
+
 ## To Do
-* Get Script add on profile page to work
-* Change to buttons for edit delete
+* Get Script add -> takes you to the Script page with the ability to add on scenes.
+* Associations between users scenes and lines
+* Model testing for scenes
+* Model testing for lines
 * Quiz mode for particular scene
 * Quiz mode randomize the lines
 * Streamline require jquery_ui?
