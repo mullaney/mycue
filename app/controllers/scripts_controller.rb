@@ -1,4 +1,7 @@
 class ScriptsController < ApplicationController
+  #before_filter :signed_in_user
+  before_filter :correct_user, only: :destroy
+
   # GET /scripts
   # GET /scripts.json
   def index
@@ -83,4 +86,10 @@ class ScriptsController < ApplicationController
       format.js
     end
   end
+
+  private
+    def correct_user
+      @script = current_user.scripts.find_by_id(params[:id])
+      redirect_to root_path if @script.nil?
+    end
 end

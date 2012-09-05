@@ -1,7 +1,18 @@
 class UsersController < ApplicationController
 
 	def show
-		@user = User.find(params[:id])
+    if logged_in?
+      @user = User.find(params[:id])
+      if current_user?(@user)
+        @scripts = @user.scripts
+      else
+        flash[:notice] = "You do not have permission to see other profiles."
+        redirect_to current_user
+      end
+    else
+      flash[:notice] = "Please sign in first."
+      redirect_to login_path
+    end
 	end
 	
   def new
@@ -18,4 +29,5 @@ class UsersController < ApplicationController
   		render 'new'
   	end
   end
+
 end

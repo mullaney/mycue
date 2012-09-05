@@ -45,4 +45,18 @@ describe "Authentication" do
 			end
 		end
 	end
+
+	describe "authorization" do
+		describe "for non-signed-in users" do
+			let(:user) { FactoryGirl.create(:user) }
+
+			describe "in the Users controller" do
+
+				describe "visiting the profile page" do
+					before { visit user_path(user) }
+					it { should have_selector('title', text: 'Login') }
+				end
+			end
+		end
+	end
 end

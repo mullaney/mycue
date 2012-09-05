@@ -1,7 +1,7 @@
 <%= div_for script do %>
-	<span><%= link_to "#{script.title}", script %></span>
-	<span>
+	<div class="pull-right">
 		<%= link_to 'Edit', edit_script_path(script) %>
 	  <%= link_to 'Destroy', script, method: :delete, remote: true, data: { confirm: 'Are you sure?' } %>
-	</span>
+	</div>
+	<div><%= link_to "#{script.title}", script %></div>
 <% end %>

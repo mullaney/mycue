@@ -11,8 +11,12 @@
 class Script < ActiveRecord::Base
 	has_many :scenes, dependent: :destroy
 	has_many :lines, through: :scene
+	belongs_to :user
 
   attr_accessible :title
 
-  validates_presence_of :title
+  validates :title, presence: true, length: { maximum: 50 }
+  validates :user_id, presence: true
+
+  default_scope order: 'scripts.created_at ASC'
 end

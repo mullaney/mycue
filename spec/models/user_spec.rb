@@ -2,10 +2,12 @@
 #
 # Table name: users
 #
-#  id         :integer          not null, primary key
-#  email      :string(255)
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
+#  id              :integer          not null, primary key
+#  email           :string(255)
+#  created_at      :datetime         not null
+#  updated_at      :datetime         not null
+#  password_digest :string(255)
+#  remember_token  :string(255)
 #
 
 require 'spec_helper'
@@ -24,6 +26,7 @@ describe User do
 	it { should respond_to(:password_confirmation) }
 	it { should respond_to(:remember_token) }
 	it { should respond_to(:authenticate) }
+	it { should respond_to(:scripts) }
 
 	it { should be_valid }
 
@@ -111,5 +114,27 @@ describe User do
 	describe "remember_token" do 
 		before { @user.save }
 		its(:remember_token) { should_not be_blank }
+	end
+
+	describe "script associations" do
+		before { @user.save }
+		let!(:older_script) do
+			FactoryGirl.create(:script, user: @user, created_at: 1.day.ago)
+		end
+		let!(:newer_script) do
+			FactoryGirl.create(:script, user: @user, created_at: 1.hour.ago)
+		end
+
+		it "should have the right scripts in the right order" do
+			@user.scripts.should == [older_script, newer_script]
+		end
+
+		it "should destroy associated scripts" do
+			scripts = @user.scripts
+			@user.destroy
+			scripts.each do |script|
+				Scripts.find_by_id(script.id).should be_nil
+			end
+		end			
 	end
 end

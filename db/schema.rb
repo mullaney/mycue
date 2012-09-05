@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120904153250) do
+ActiveRecord::Schema.define(:version => 20120904211555) do
 
   create_table "lines", :force => true do |t|
     t.integer  "scene_id",   :null => false
@@ -34,6 +34,7 @@ ActiveRecord::Schema.define(:version => 20120904153250) do
     t.string   "title",      :null => false
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.integer  "user_id"
   end
 
   create_table "users", :force => true do |t|

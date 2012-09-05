@@ -1,22 +1,27 @@
 namespace :db do
-	desc "Fill database with sample data"
-	task populate: :environment do
-		# Scripts
-		3.times do |n|
-			# Scripts
-			script = Script.create!(title: "Script Example - #{n+1}")
-			# Scenes
-			2.times do |s|
-				scene = Scene.create!(name: "Scene #{n+1}.#{s+1}", script_id: script.id, order: s)
-				# Lines
-				7.times do |l|
-					line = Line.create!(cue: Faker::Lorem.sentences(1).join(" "), 
-						                  line: Faker::Lorem.sentences(2).join(" "), 
-						                  scene_id: scene.id, order: l)
-				end
-			end
-		end
-	end
+  desc "Fill database with sample data"
+  task populate: :environment do
+    make_users
+    make_scripts
+  end
 end
 
-#line: Faker::Lorem.sentences(2).to_s.gsub(/-/, '').join(" "),
+def make_users
+  admin = User.create!(email: "example@railstutorial.org",
+                       password: "foobar",
+                       password_confirmation: "foobar")
+  99.times do |n|
+    email = "example-#{n+1}@railstutorial.org"
+    password = "password"
+    User.create!(email: email, password: password,
+                 password_confirmation: password)
+  end
+end
+
+def make_scripts
+  users = User.all(limit: 6)
+  9.times do
+    title = Faker::Lorem.words(3).join(" ")
+    users.each { |user| user.scripts.create!(title: title) }
+  end
+end
