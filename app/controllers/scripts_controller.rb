@@ -1,5 +1,5 @@
 class ScriptsController < ApplicationController
-  #before_filter :signed_in_user
+  before_filter :logged_in_user
   before_filter :correct_user, only: :destroy
 
   # GET /scripts
@@ -44,17 +44,19 @@ class ScriptsController < ApplicationController
   # POST /scripts
   # POST /scripts.json
   def create
-    @script = Script.new(params[:script])
+    @script = current_user.scripts.build(params[:script])
 
     respond_to do |format|
       if @script.save
-        format.html { redirect_to @script, notice: 'Script was successfully created.' }
+        format.html do
+          flash[:success] = "New script created!"
+          redirect_to root_path
+        end
         format.json { render json: @script, status: :created, location: @script }
       else
         format.html { render action: "new" }
         format.json { render json: @script.errors, status: :unprocessable_entity }
       end
-      format.js
     end
   end
 

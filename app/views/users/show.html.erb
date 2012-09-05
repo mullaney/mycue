@@ -10,7 +10,7 @@
   	<h3>Your scripts</h3>
  		<%= render @scripts %>
   	<br />
-			<%= form_for(Script.new, remote: true) do |f| %>
+			<%= form_for(Script.new) do |f| %>
 			  <div class="field">
 			    <%= f.label :title %>
 			    <%= f.text_field :title %>

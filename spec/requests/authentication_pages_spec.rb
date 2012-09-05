@@ -47,6 +47,7 @@ describe "Authentication" do
 	end
 
 	describe "authorization" do
+		
 		describe "for non-signed-in users" do
 			let(:user) { FactoryGirl.create(:user) }
 
@@ -55,6 +56,18 @@ describe "Authentication" do
 				describe "visiting the profile page" do
 					before { visit user_path(user) }
 					it { should have_selector('title', text: 'Login') }
+				end
+			end
+
+			describe "in the Scripts controller" do
+				describe "submitting the create action" do
+					before { post scripts_path }
+					specify { response.should redirect_to(login_path) }
+				end
+
+				describe "sumbitting the destroy action" do
+					before { delete script_path(FactoryGirl.create(:script)) }
+					specify { response.should redirect_to(login_path) }
 				end
 			end
 		end
